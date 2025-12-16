@@ -1,0 +1,19 @@
+@using SimpleBlogMVC.Models.Entities
+@{
+    ViewData["Title"] = "Tag Page";
+    List<Tag> tags = ViewBag.Tags;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tag Page</h1>
+    <p>Here Are All Tags</p>
+    
+    <div class="mb-3 text-end">
+        <a href="@Url.Action("Create", "Tag")" class="btn btn-primary">
+            ADD New Tag
+        </a>
+    </div>
+    
+    @await Html.PartialAsync("_TagList", tags)
+    
+</div>

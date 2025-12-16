@@ -1,0 +1,30 @@
+@model SimpleBlogMVC.Models.PostUpdateViewModel;
+
+@{
+    ViewData["Title"] = "Update Post";
+    var updatePost = ViewBag.UpdatePost;
+}
+
+<h2 class="mb-4"> Update Post </h2>
+
+<form asp-controller="Post" asp-action="Update" method="post">
+        
+    <div class="mb-3">
+        <input asp-for="Id" type="hidden" value="@updatePost.Id" class="form-control"/>
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"> Post Title </label>
+        <input asp-for="Title" value="@updatePost.Title" class="form-control"/>
+        <span asp-validation-for="Title" class="text-danger"> </span>
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="Content" class="form-label"> About Post </label>
+        <input asp-for="Content" value="@updatePost.Content" class="form-control"/>
+        <span asp-validation-for="Content" class="text-danger"> </span>
+    </div>
+
+    <button type="submit" class="btn btn-primary"> Save </button>
+    <a asp-action="Index" class="btn btn-secondary ms-2"> Cancel </a>
+</form>

@@ -1,0 +1,15 @@
+<div class="row">
+    @foreach (var tag in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+
+                <div class="card-body">
+                    <h5 class="card-title">@tag.Id</h5>
+                    <h4 class="card-title">@tag.Name</h4>
+                </div>
+                
+            </div>
+        </div>
+    }
+</div>

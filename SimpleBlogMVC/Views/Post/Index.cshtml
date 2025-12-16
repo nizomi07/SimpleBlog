@@ -1,0 +1,19 @@
+@using SimpleBlogMVC.Models.Entities
+@{
+    ViewData["Title"] = "Post Page";
+    List<Post> posts = ViewBag.Posts;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Post Page</h1>
+    <p>Here Are All Posts, Click and Read</p>
+    
+    <div class="mb-3 text-end">
+        <a href="@Url.Action("Create", "Post")" class="btn btn-primary">
+            ADD New POST
+        </a>
+    </div>
+    
+    @await Html.PartialAsync("_PostList", posts)
+    
+</div>
