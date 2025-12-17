@@ -47,10 +47,12 @@ public class PostController(IPostService service) : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult Details(int id)
+    public async Task<IActionResult> Details(int id)
     {
-        var postDetail = service.Details(id);
-        ViewBag.PostDetail = postDetail;
-        return View(postDetail);
+        var postDetails = await service.Details(id);
+        
+        ViewBag.PostDetails = postDetails;
+        
+        return View(postDetails);
     }
 }
