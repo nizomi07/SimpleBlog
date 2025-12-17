@@ -1,0 +1,32 @@
+@model SimpleBlogMVC.Models.Entities.Post;
+
+@{
+    ViewData["Title"] = "Post Details";
+    var postDetails = ViewBag.PostDetails;
+}
+
+<h2> Product Details </h2>
+
+<hr/>
+
+<p><strong>Id:</strong>@Model.Id</p>
+<p>
+    <strong>
+        Title:
+    </strong>
+    @Model.Title
+</p>
+<p>
+    <strong>
+        Content:
+    </strong>
+    @Model.Content
+</p>
+<p>
+    <strong>
+        Content:
+    </strong>
+    @Model.PublicationDate
+</p>
+
+<a asp-action="Index" class="btn btn-secondary"> Back </a>

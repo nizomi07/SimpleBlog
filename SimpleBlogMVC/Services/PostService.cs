@@ -38,7 +38,7 @@ public class PostService(DataContext context, IMapper mapper) : IPostService
     {
         var query = context.Posts.AsQueryable();
         
-        return query.FirstAsync(p => p.Id == postId);
+        return query.FirstOrDefaultAsync(p => p.Id == postId);
     }
 
     public async Task<Post> DeletePostAsync(int postId)

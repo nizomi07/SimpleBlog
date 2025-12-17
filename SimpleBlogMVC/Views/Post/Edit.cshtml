@@ -16,7 +16,7 @@
     <div class="mb-3">
         <label asp-for="Title" class="form-label"> Post Title </label>
         <input asp-for="Title" value="@updatePost.Title" class="form-control"/>
-        <span asp-validation-for="Title" class="text-danger"> </span>
+        <span asp-validation-for="Title" class="text-danger"> @Model.Title </span>
     </div>
     
     <div class="mb-3">

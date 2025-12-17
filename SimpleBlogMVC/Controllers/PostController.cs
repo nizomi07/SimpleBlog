@@ -36,15 +36,21 @@ public class PostController(IPostService service) : Controller
     {
         ViewBag.UpdatePost = model;
         
-        return View();
+        return View(model);
     }
 
     [HttpPost]
     public async Task<IActionResult> Update([FromForm] PostUpdateViewModel model)
     {
+        Console.WriteLine(model.Id);
         await service.UpdatePostAsync(model);
         return RedirectToAction("Index");
     }
-    
-    
+
+    public IActionResult Details(int id)
+    {
+        var postDetail = service.Details(id);
+        ViewBag.PostDetail = postDetail;
+        return View(postDetail);
+    }
 }
