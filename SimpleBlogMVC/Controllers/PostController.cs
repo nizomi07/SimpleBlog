@@ -34,9 +34,26 @@ public class PostController(IPostService service) : Controller
 
     public async Task<IActionResult> Edit(PostUpdateViewModel model)
     {
-        ViewBag.UpdatePost = model;
+        // ViewBag.UpdatePost = model;
+        //
+        // return View(model);
         
-        return View(model);
+        
+        var post = await service.Details(model.Id);
+
+        if (post == null)
+            return NotFound();
+
+        var myModel = new PostUpdateViewModel
+        {
+            Id = post.Id,
+            Title = post.Title,
+            Content = post.Content
+        };
+        
+        ViewBag.UpdatePost = myModel;
+
+        return View(myModel);
     }
 
     [HttpPost]

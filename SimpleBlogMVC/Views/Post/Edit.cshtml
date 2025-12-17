@@ -14,14 +14,14 @@
     </div>
     
     <div class="mb-3">
-        <label asp-for="Title" class="form-label"> Post Title </label>
-        <input asp-for="Title" value="@updatePost.Title" class="form-control"/>
-        <span asp-validation-for="Title" class="text-danger"> @Model.Title </span>
+        <label name="Title" class="form-label"> Post Title </label>
+        <input asp-for="Title" class="form-control"/>
+        <span asp-validation-for="Title" class="text-danger">  </span>
     </div>
     
     <div class="mb-3">
         <label asp-for="Content" class="form-label"> About Post </label>
-        <input asp-for="Content" value="@updatePost.Content" class="form-control"/>
+        <input asp-for="Content" class="form-control"/>
         <span asp-validation-for="Content" class="text-danger"> </span>
     </div>
 
